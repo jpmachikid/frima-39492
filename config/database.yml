@@ -17,7 +17,7 @@ development:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: 
   host: localhost
   database: frima_39492_development
 
@@ -28,7 +28,7 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: 
   host: localhost
   database: frima_39492_test
 
