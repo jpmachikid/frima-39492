@@ -52,11 +52,11 @@
 
 | column             | Type      | Options       |
 | ------------------ | --------- | ------------- |
+| order              | references    | null: false, foreign_key: true   |
 | postal_code               | string    | null: false   |
-| prefecture              | integer    | null: false   |
+| prefecture_id              | integer    | null: false   |
 | city | string    | null: false   |
 | house_number | string    | null: false   |
-| city | string    | null: false   |
 | building |string     |    |
 | telephone | string    | null: false   |
 
