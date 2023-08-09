@@ -23,11 +23,11 @@
 
 | column             | Type      | Options       |
 | ------------------ | --------- | ------------- |
-| image               | string    | null: false   |
+| user              | references    | null: false, foreign_key: true   |
 | item_name              | string    | null: false   |
 | description | text    | null: false   |
-| category              | integer    | null: false   |
-| condition              | integer    | null: false   |
+| category_id              | integer    | null: false   |
+| condition_id              | integer    | null: false   |
 | price              | integer    | null: false   |
 
 ### Association
