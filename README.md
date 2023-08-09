@@ -39,8 +39,7 @@
 
 | column             | Type      | Options       |
 | ------------------ | --------- | ------------- |
-| user_id               | references    | null: false, external_key: true   |
-| item_price              | references    | null: false, external_key: true   |
+| item              | references    | null: false, foreign_key: true   |
 
 ### Association
 
