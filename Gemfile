@@ -71,9 +71,15 @@ group :test do
   gem "webdrivers"
 end
 
+
 gem 'devise'
 gem 'pry-rails'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'gimei'
+
+group :production do
+  gem 'pg'
+end
+
