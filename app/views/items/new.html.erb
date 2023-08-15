@@ -8,7 +8,7 @@
     <%= form_with model: @item,url: items_path, local: true do |f| %>
 
    
-    <% render partial: 'shared/error_messages', locals:{model: @item} %>
+    <%= render partial: 'shared/error_messages', locals:{model: @item} %>
    
 
     <%# 商品画像 %>

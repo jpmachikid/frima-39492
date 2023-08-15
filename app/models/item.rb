@@ -9,7 +9,8 @@ class Item < ApplicationRecord
     validates :shipping_fee_id
     validates :prefecture_id
     validates :shipping_date_id
-    validates :price
+    validates :price, format: {with: /\A[0-9]+\z/}, numericality: { greater_than: 299, less_than: 10_000_000}
+    validates :image
   end
  
   belongs_to :condition
