@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   with_options presence: true do
-    validates :user
     validates :item_name
     validates :description
     validates :category_id
