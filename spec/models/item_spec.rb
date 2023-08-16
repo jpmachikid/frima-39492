@@ -77,6 +77,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than 10000000")
       end
+      it 'priceが整数でないと保存できない' do
+        @item.price = 5000.5
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price must be an integer")
+      end
     end
   end
 
