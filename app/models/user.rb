@@ -12,5 +12,6 @@ with_options presence: true do
   validates :birthday
 end
 validates :password, length:{minimum: 6}, format:{with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i}
-  
+
+has_many :items
 end
