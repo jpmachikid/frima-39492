@@ -35,8 +35,10 @@ class ItemsController < ApplicationController
     end
   end
   def destroy
+    if user_signed_in? && current_user.id == @item.user.id
     @item.delete
     redirect_to root_path
+    end
   end
   private
 
