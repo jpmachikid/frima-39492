@@ -23,6 +23,9 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    if user_signed_in? && current_user.id != @item.user.id
+      redirect_to root_path
+    end
   end
   def update
     @item = Item.find(params[:id])
@@ -39,4 +42,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:item_name,:description,:category_id,:condition_id,:shipping_fee_id,:prefecture_id,:shipping_date_id,:price,:image).merge(user_id: current_user.id)
   end
   
+  
+   
+
 end
