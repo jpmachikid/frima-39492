@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if user_signed_in? && current_user.id != @item.user.id
+    if user_signed_in? && (current_user.id != @item.user.id || @item.order != nil)
       redirect_to root_path
     end
   end
