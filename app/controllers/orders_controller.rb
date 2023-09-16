@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  before_action :item_find
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order_shipment = OrderShipment.new
-    item_find
     if user_signed_in? && current_user.id == @item.user.id
       redirect_to root_path
     elsif user_signed_in? && current_user.id != @item.user.id && @item.order != nil
@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
   end
   
   def create
-    item_find
     @order_shipment = OrderShipment.new(order_params)
     if @order_shipment.valid?
       pay_item
