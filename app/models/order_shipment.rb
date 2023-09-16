@@ -1,7 +1,7 @@
 class OrderShipment
 
   include ActiveModel::Model
-  attr_accessor :user_id,:item_id,:postal_code,:prefecture_id,:city,:house_number,:building,:telephone
+  attr_accessor :user_id,:item_id,:postal_code,:prefecture_id,:city,:house_number,:building,:telephone,:token,:price
   
   with_options presence: true do
     validates :user_id
@@ -11,6 +11,7 @@ class OrderShipment
     validates :city
     validates :house_number
     validates :telephone,format: {with: /\A\d{10,11}\z/}
+    validates :token
   end
 
   def save
