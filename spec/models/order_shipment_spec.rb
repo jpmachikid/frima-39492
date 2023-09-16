@@ -60,7 +60,12 @@ RSpec.describe OrderShipment, type: :model do
         @order_shipment.valid?
         expect(@order_shipment.errors.full_messages).to include("Telephone can't be blank")
       end
-      it 'telephoneが10 or 11文字の半角数字でないと保存出来ない' do
+      it 'telephoneが12文字以上の半角数字では保存出来ない' do
+        @order_shipment.telephone = '000000000000'
+        @order_shipment.valid?
+        expect(@order_shipment.errors.full_messages).to include("Telephone is invalid")
+      end
+      it 'telephoneが9文字以下の半角数字では保存出来ない' do
         @order_shipment.telephone = '000000000'
         @order_shipment.valid?
         expect(@order_shipment.errors.full_messages).to include("Telephone is invalid")
