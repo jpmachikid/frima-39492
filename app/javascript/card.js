@@ -1,4 +1,4 @@
-const pay = () => {
+function pay(){
   const publicKey = gon.public_key
   const payjp = Payjp(publicKey)
   const elements = payjp.elements()
@@ -31,4 +31,4 @@ const pay = () => {
   
 };
 
-window.addEventListener("turbo:load", pay)
+window.addEventListener('turbo:load', pay)
